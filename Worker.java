@@ -35,5 +35,4 @@ public class Worker {
         errorCallback.OnError("Task " + 33 + " is not completed");
     }
 
-
 }
