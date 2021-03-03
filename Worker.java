@@ -23,16 +23,13 @@ public class Worker {
         this.errorCallback = errorCallback;
     }
 
-    public void start() {
+    public void start(OnTaskDoneListener callback, OnTaskErrorListener errorCallback) {
         for (int i = 0; i < 100; i++) {
             if (i != 33) {
                 callback.onDone("Task " + i + " is done");
+            } else {
+                errorCallback.OnError("Task " + 33 + " is not completed");
             }
         }
     }
-
-    public void error() {
-        errorCallback.OnError("Task " + 33 + " is not completed");
-    }
-
 }
